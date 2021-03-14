@@ -1,7 +1,8 @@
-from classParente import *
+from classDiagnostico import *
 from classPerguntas import *
 
-se = Parente()
+#Inferência
+se = Diagnostico()
 pergunta = Pergunta()
 
 
@@ -11,4 +12,4 @@ while se.probabilidade() != 100:
 	print('probabilidade é %d' %(se.probabilidade()))
 	print(se.resultado)
 	if se.probabilidade() == 100:
-		print('Parente pensado foi: ',se.resultado[0])	
+		print('O seu Pet está: ',se.resultado[0])
