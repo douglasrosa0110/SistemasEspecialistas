@@ -1,14 +1,21 @@
+# -*- coding: utf-8 -*-
 class Diagnostico():
 	# metodo construtor
 	def __init__(self):
-		self.resultado = ['cansado', 'estressado', 'deprimido', 'faminto','saudavel']
+		self.resultado = [
+			'asma',
+			'pneumonia',
+			'tuberculose',
+			'enxaqueca',
+			'acidente_vascular_cerebral',
+		]
 		self.pessoa = []
 		self.db = []
 		# abre o arquivo db.txt em modo leitura e passa os dados para
 		# uma lista de listas de str
-		arquivo = open('db.txt','r')
+		arquivo = open('db.py','r')
 		for linha in arquivo:
-			if linha[len(linha) - 1] == '\n':
+			if linha[0] != '#' and linha[len(linha) - 1] == '\n':
 				linha = linha.replace("\n", "")
 				(self.db).append(linha.split('-'))
 		arquivo.close()
@@ -19,7 +26,7 @@ class Diagnostico():
 
 	# imprime a probabilidade do diagnótico
 	def probabilidade(self):
-		return (int((1/int(len(self.resultado)))*100))
+		return (int(100/len(self.resultado)))
 
 
 	# verifica se diagnóstico pensado tem a caracteristica passada por parametro
@@ -53,16 +60,9 @@ class Diagnostico():
 			self.resultado.remove(lista[i])
 		
 	def pergunta(self,pergunta,caract):
-		resp = input(pergunta+': ')
-		if resp == 's' or resp == 'S':
+		# print(self,pergunta,caract)
+		resp = input(pergunta)
+		if resp == 's' or resp == 'S' or resp == 'yes' or resp == 1:
 			self.excluiquemnaoe(caract)
-		elif resp == 'n' or resp == 'N':
+		elif resp == 'n' or resp == 'N' or resp == 'no' or resp == 0:
 			self.excluiqueme(caract)
-
-"""
-O seu Pet está agitado?'			->		'agitado'
-O seu Pet está comendo bem?'		->		'alimentado'
-'O ambiente é adequado?'			->		'ambiente_adequado'
-'O seu Pet fez atividade física?' 	-> 		'se_movimenta',		
-
-"""
