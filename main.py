@@ -11,7 +11,7 @@ print('================')
 
 while se.probabilidade() != 100:
 	string = pergunta.texto()
-	se.pergunta(string[0],string[1])
+	se.pergunta(string[0], string[1])
 	print('---')
 	# print('Probability: %d' %(se.probabilidade()), "%")
 	print(se.resultado)

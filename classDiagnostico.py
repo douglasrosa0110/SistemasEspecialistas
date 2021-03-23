@@ -3,11 +3,15 @@ class Diagnostico():
 	# metodo construtor
 	def __init__(self):
 		self.resultado = [
-			'asma',
-			'pneumonia',
-			'tuberculose',
-			'enxaqueca',
-			'acidente_vascular_cerebral',
+			'child_sick1',
+			'adult_sick1',
+			'adult_sick2',
+			'adult_sick3',
+			# 'asma',
+			# 'pneumonia',
+			# 'tuberculose',
+			# 'enxaqueca',
+			# 'acidente_vascular_cerebral',
 		]
 		self.pessoa = []
 		self.db = []
@@ -26,7 +30,12 @@ class Diagnostico():
 
 	# imprime a probabilidade do diagnótico
 	def probabilidade(self):
-		return (int(100/len(self.resultado)))
+		# print('self.resultado', self.resultado)
+		if(len(self.resultado) > 0): 
+			return (int(100/len(self.resultado)))
+		else: 
+			return 100
+		
 
 
 	# verifica se diagnóstico pensado tem a caracteristica passada por parametro

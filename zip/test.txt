@@ -1,0 +1,8 @@
+CASE OF USE 1
+=============
+- Is adult? 1
+- Does the chest hurt? 0
+- Does the head hurt? 1
+- Do any member fall asleep? 1
+
+RESULT (EXPECTED): adult_sick2
